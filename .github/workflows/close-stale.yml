@@ -1,0 +1,14 @@
+name: Close Stale Issues
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Runs daily
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v7
+        with:
+          days-before-stale: 30
+          stale-issue-message: "This issue is stale. Please update or it will be closed."
+          days-before-close: 7
